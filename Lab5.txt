@@ -1,0 +1,113 @@
+lab5
+package ExceptionDemo;
+import java.util.Scanner;
+class AgeException extends Exception
+{
+	public AgeException(String str)
+	{
+		System.out.println(str);
+	}
+}
+
+public class Exercise1 
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter ur age::");
+		int age=sc.nextInt();
+		try {
+			if(age>15)
+				throw new AgeException("invalid age");
+				else
+				System.out.println("Valid age");
+		}
+		catch(AgeException a) {
+			System.out.println(a);
+		}
+		
+	}
+	
+	
+
+}
+
+package ExceptionDemo;
+
+import java.util.Scanner;
+
+public class Exercise2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter first name:");
+		String firstname = sc.nextLine();
+		System.out.println("Enter last name:");
+		String lastname = sc.nextLine();
+		try {
+			if ((firstname.length() == 0) && (lastname.length() == 0))
+				throw new InvalidName("invalid Character");
+			else
+				System.out.println("valid name");
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+	}
+
+}
+
+
+package ExceptionDemo;
+
+public class InvalidName extends RuntimeException {
+
+	public InvalidName(String message) {
+		super(message);
+	}
+ 
+
+}
+
+......
+package ExceptionDemo;
+
+import java.util.Scanner;
+
+public class EmployeeException 
+{
+	public static void main(String[]args)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the employee salary:");
+		int salary = sc.nextInt();
+		try
+		{
+			if(salary < 3000)
+			{
+				throw new EmployeeSalInvalid("Employtee salary is above 3000");
+			}
+			else
+			{
+				System.out.println("Employee salary is valid");
+			}
+		}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+
+
+}
+..package ExceptionDemo;
+
+public class EmployeeSalInvalid extends RuntimeException {
+
+	public EmployeeSalInvalid(String message) {
+		super(message);
+	
+	}
+
+
+}
+...............
