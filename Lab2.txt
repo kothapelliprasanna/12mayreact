@@ -1,0 +1,119 @@
+package pakage4;
+
+public class SmallestNumber
+{
+	public static int getSecondSmallest(int arr[])
+	{
+		int smallest=Integer.MAX_VALUE;
+		int secondSmallest=Integer.MAX_VALUE;
+		
+		//{1,2,3,4,5}
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i]<smallest)
+			{
+				smallest=arr[i];
+			}
+			if(arr[i]>smallest && arr[i]< secondSmallest)
+			{
+				secondSmallest=arr[i];
+			}
+		}
+		return secondSmallest;
+	}
+	public static void main(String[] args)
+	{
+		int arr[]= {1,2,3,4,5};
+		
+		//method call
+		int result=getSecondSmallest(arr);
+		System.out.println("Second smallest number"+ result);
+		
+	}
+
+}
+................
+package pakage4;
+import java.util.Arrays;
+import java.util.Scanner;
+public class AlphabeticalSorted 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		Scanner sc1=new Scanner(System.in);
+		
+		int n;
+		System.out.println("Enter the number of elements");
+		n=sc.nextInt();
+		
+		String str[]=new String[n];
+		for(int i=0; i<n;i++)
+		{
+			str[i]=sc1.nextLine();
+		}
+		Arrays.sort(str);
+		System.out.println(Arrays.toString(str));
+		
+	}
+
+}
+....................
+package pakage4;
+
+public class RemoveDuplicates
+{
+	public static void main(String[] args) 
+	{
+		int arr[]= {1,2,3,4,4,5};
+		int len=arr.length;
+		//int temp[]=new int[arr.length];
+		int j=0;
+		
+		for(int i=0;i<len-1;i++)
+		{
+			if(arr[i]!=arr[i+1])
+			{
+				arr[j++]=arr[i];//1,2,3,4,5
+			}
+		}
+		arr[j++]=arr[len-1];
+		
+		for(int k=0;k<j;k++)
+		{
+			System.out.println(arr[k]);
+		}
+		
+	}
+
+}
+............................
+/**
+ * Exercise 3: Create a method which accepts an integer array, 
+ * reverse the numbers in the array and returns the resulting array in sorted order
+ */
+
+package pakage4;
+
+
+public class ReverseArray 
+{
+	public static void main(String[] args) 
+	{
+		int[] array1=new int[] {2,3,4,5};
+		System.out.println("The original array is");
+		for(int i=0;i<array1.length;i++)
+		{
+			System.out.print(array1[i]);
+		}
+		System.out.println();
+		System.out.println("reverse array is");
+		  for(int i=array1.length-1;i>=0;i--)
+		  {
+		    System.out.print(array1[i]+" ");
+		  }
+			
+		
+	}
+
+}
