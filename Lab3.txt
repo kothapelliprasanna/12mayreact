@@ -1,0 +1,111 @@
+package pakage1;
+import java.util.Scanner;
+
+public class MirrorImageOfString 
+{
+	
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter input string");
+		String string=sc.nextLine();
+		String rev=" ";
+		for(int i=string.length()-1;i>=0;i--)
+		{
+			rev=rev+string.charAt(i);
+		}
+		
+	
+		System.out.println("input string:"+string);
+		System.out.println("output string:"+rev);
+
+	}
+	
+
+}
+......................
+package pakage1;
+import java.util.*;
+
+public class SumOfAllIntegers {
+
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter numbers in a line separated by space");
+		String line=sc.nextLine();
+		StringTokenizer st=new StringTokenizer(line);
+		int sum=0,i=1;
+		while(st.hasMoreTokens()) 
+		{
+			int n=0;
+			//method to convert string to integer in java is parseInt()
+			//it takes a valid string as a parameter and parses it into primitive datatype
+			n=Integer.parseInt(st.nextToken());
+		
+		System.out.println("Number ["+(i++)+"]:"+n);
+		sum+=n;
+	}
+	System.out.println("sum of the number is:"+sum);
+
+	
+		
+
+	}
+
+}
+...........................
+package pakage1;
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.Calendar;
+import java.util.*;
+
+public class CurrentSystemDate
+{
+	public static void main(String[] args)
+	{
+	//creating a calender object
+		Calendar cal=new GregorianCalendar(2021,07,18);
+		//getting the values of day,month and year from calender object
+		int day =cal.get(Calendar.DAY_OF_MONTH);
+		int month=cal.get(Calendar.MONTH);
+		int year =cal.get(Calendar.YEAR);
+		//printing day month and year
+		System.out.println("Day:"+day);
+		System.out.println("month:"+month);
+		System.out.println("year:"+year);
+
+
+	}
+
+}
+.....................
+package pakage1;
+import java.util.*;
+
+public class ReplaceConsonants
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the sentence");
+		String s=sc.nextLine();
+		String p="aeiouAEIOU";
+		String q=" ";
+		for(int i=0;i<s.length();i++)
+		{
+			char c=s.charAt(i);
+			if(p.indexOf(c)==-1)
+			{
+				c--;
+			    if(p.indexOf(c)!=-1)
+				c+=2;
+			}
+			q+=c;
+
+			}
+		System.out.println("modified sentence is "+q);
+	}
+
+}
